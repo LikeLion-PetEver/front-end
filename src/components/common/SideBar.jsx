@@ -31,6 +31,7 @@ const SideBar = () => {
             <IconWrapper
               width={isExtended ? "210px" : "50px"}
               onClick={() => {
+                SetIsExtended(!isExtended);
                 nav("/");
               }}
             >
@@ -42,6 +43,7 @@ const SideBar = () => {
             <IconWrapper
               width={isExtended ? "210px" : "50px"}
               onClick={() => {
+                SetIsExtended(!isExtended);
                 nav("/");
               }}
             >
@@ -53,6 +55,7 @@ const SideBar = () => {
             <IconWrapper
               width={isExtended ? "210px" : "50px"}
               onClick={() => {
+                SetIsExtended(!isExtended);
                 nav("/memorialMain");
               }}
               className={
@@ -67,6 +70,7 @@ const SideBar = () => {
             <IconWrapper
               width={isExtended ? "210px" : "50px"}
               onClick={() => {
+                SetIsExtended(!isExtended);
                 nav("/");
               }}
             >
@@ -78,6 +82,7 @@ const SideBar = () => {
             <IconWrapper
               width={isExtended ? "210px" : "50px"}
               onClick={() => {
+                SetIsExtended(!isExtended);
                 nav("/");
               }}
             >

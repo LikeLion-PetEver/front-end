@@ -13,14 +13,15 @@ const FuneralLocationDetail = () => {
 
   return (
     <div className="container">
-      <div className="header">
+      <div className="location-detail-header">
         <img className="header-img" src={img} alt={title} />
-        <div className="header-content">
+        <div className="location-header-overlay"></div>
+        <div className="location-header-content">
           <div className="title">
             <img src={caretleft} className="careleft" onClick={onClickLeft} />
             <h1>{title}</h1>
           </div>
-          <p>{address}</p>
+          <p className="adress">{address}</p>
         </div>
       </div>
       <div className="main">

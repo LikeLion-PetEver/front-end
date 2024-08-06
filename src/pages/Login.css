@@ -12,6 +12,9 @@
   display: flex;
   justify-content: center;
   font-size: 60px;
+  font-family: "LINESeedKR";
+  font-weight: 600;
+  padding-bottom: 30px;
 }
 
 .id input {

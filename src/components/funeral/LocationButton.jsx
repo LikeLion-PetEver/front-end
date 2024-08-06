@@ -7,8 +7,8 @@ import styled from "styled-components";
 const LocationButton = ({ mockData }) => {
   const [area, setArea] = useState("수도권");
 
-  const filteredMetropolitan = () => {
-    return mockData.filter((location) => location.region === "수도권");
+  const filteredMetropolitan = (region) => {
+    return mockData.filter((location) => location.region === region);
   };
 
   const [newList, setNewList] = useState(filteredMetropolitan());
@@ -17,8 +17,8 @@ const LocationButton = ({ mockData }) => {
     setNewList(filteredMetropolitan());
   }, [mockData]);
 
-  const filteredLocations = () => {
-    return mockData.filter((location) => location.region === area);
+  const filteredLocations = (region) => {
+    return mockData.filter((location) => location.region === region);
   };
 
   const nav = useNavigate();
@@ -42,7 +42,7 @@ const LocationButton = ({ mockData }) => {
           className={area === "수도권" ? "isSelected" : ""}
           onClick={() => {
             setArea("수도권");
-            setNewList(filteredMetropolitan());
+            setNewList(filteredMetropolitan("수도권"));
           }}
         >
           수도권
@@ -51,7 +51,7 @@ const LocationButton = ({ mockData }) => {
           className={area === "강원권" ? "isSelected" : ""}
           onClick={() => {
             setArea("강원권");
-            setNewList(filteredLocations());
+            setNewList(filteredLocations("강원권"));
           }}
         >
           강원권
@@ -60,7 +60,7 @@ const LocationButton = ({ mockData }) => {
           className={area === "충청권" ? "isSelected" : ""}
           onClick={() => {
             setArea("충청권");
-            setNewList(filteredLocations());
+            setNewList(filteredLocations("충청권"));
           }}
         >
           충청권
@@ -69,7 +69,7 @@ const LocationButton = ({ mockData }) => {
           className={area === "영남권" ? "isSelected" : ""}
           onClick={() => {
             setArea("영남권");
-            setNewList(filteredLocations());
+            setNewList(filteredLocations("영남권"));
           }}
         >
           영남권
@@ -78,7 +78,7 @@ const LocationButton = ({ mockData }) => {
           className={area === "호남권" ? "isSelected" : ""}
           onClick={() => {
             setArea("호남권");
-            setNewList(filteredLocations());
+            setNewList(filteredLocations("호남권"));
           }}
         >
           호남권

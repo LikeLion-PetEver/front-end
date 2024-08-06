@@ -1,4 +1,4 @@
-.header {
+.header-landing {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,7 +9,7 @@
 
 .header-content-landing {
   display: flex;
-  padding-top: 210px;
+  padding-top: 120px;
   padding-left: 105px;
   justify-content: space-between;
   align-items: center;
@@ -19,12 +19,12 @@
   position: relative;
 }
 
-.text-content {
+.text-content-landing {
   flex: 1;
   box-sizing: border-box;
 }
 
-.logo {
+.logo-landing {
   padding-bottom: 21px;
   color: var(--accent, #ef7057);
   font-family: HelveticaRounded-Black;
@@ -39,7 +39,7 @@
   color: var(--accent2, #ffc04e);
 }
 
-.hero {
+.hero-landing {
   color: #150a08;
   font-family: "LINE Seed Sans KR";
   font-size: 40px;
@@ -53,13 +53,13 @@
   color: var(--accent, #ef7057);
 }
 
-.hero p {
+.hero-landing p {
   margin: 0;
   padding: 0;
   padding-bottom: 3px;
 }
 
-.hero_detail {
+.hero_detail-landing {
   padding-top:45px;
   color: #000;
   font-family: "LINE Seed Sans KR";
@@ -70,51 +70,51 @@
   letter-spacing: -0.5px;
 }
 
-.hero_detail p {
+.hero_detail-landing p {
   margin: 0;
   padding: 0;
   padding-bottom: 3px;
 }
 
-.image-content {
+.image-content-landing {
   position: absolute;
-  top:-10;
+  top:0px;
   right: 0;
   width: 50%; /* 부모 요소의 너비를 설정 */
 }
 
-.image-content img {
+.image-content-landing img {
   width: 100%;
   max-width: 100%;
   height: auto;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
   .content {
     flex-direction: column;
     align-items: center;
   }
 
-  .text-content {
+  .text-content-landing {
     padding-right: 0;
     padding-bottom: 20px;
   }
 
-  .hero {
+  .hero-landing {
     text-align: center;
   }
 
-  .hero_detail {
+  .hero_detail-landing {
     text-align: center;
   }
 
-  .image-content {
+  .image-content-landing {
     position: static; /* 미디어 쿼리에서 재조정 */
     justify-content: center;
     width: 120%; /* 작은 화면에서 부모 요소의 너비를 100%로 설정 */
   }
 
-  .image-content img {
+  .image-content-landing img {
     width: 50%; /* 작은 화면에서는 이미지의 너비를 100%로 설정 */
   }
 }

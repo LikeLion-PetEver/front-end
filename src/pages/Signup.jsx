@@ -88,6 +88,7 @@ function Signup() {
           name="password"
           onChange={onChangeField}
         />
+        <p className="kdh">바밀번호는 숫자 문자 포함 8자 이상</p>
       </div>
       <div className="inputField">
         <p>비밀번호 확인</p>

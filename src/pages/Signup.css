@@ -8,6 +8,8 @@
 
 .Signup h1 {
   color: black;
+  font-family: "LINESeedKR";
+  font-weight: 600;
 }
 
 .inputField {
@@ -20,12 +22,22 @@
   padding-bottom: 5px;
 }
 
+.inputField .kdh {
+  padding-top: 6px;
+  color: rgb(212, 59, 59);
+}
+
 .inputField input {
   color: black;
   padding: 20px;
   width: 400px;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+.inputField .info {
+  color:rgb(202, 57, 57);
+  margin-top: 5px;
 }
 
 .button {

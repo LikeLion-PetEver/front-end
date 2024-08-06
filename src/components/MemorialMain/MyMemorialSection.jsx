@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../common/Button";
 import memorialLanding from "../../assets/icon/memorialLanding.png";
 import styled from "styled-components";
@@ -7,7 +7,35 @@ import { useNavigate } from "react-router-dom";
 import { MainText, SubText } from "./OtherMemorialSection";
 
 const MyMemorialSection = () => {
+  const [isLogin, setIsLogin] = useState(false);
+  const [userId, setUserId] = useState(0);
+  const [myMemorialId, setMyMemorialId] = useState(0);
+  const [isCreated, setIsCreated] = useState(false);
   const nav = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem("accessToken")) {
+      setIsLogin(true);
+    }
+    if (localStorage.getItem("user_id")) {
+      setUserId(Number(localStorage.getItem("user_id")));
+    }
+    //나의 추모관 페이지 이동 기능 추가 (api 새로 만들자)
+  }, []);
+
+  const onClickCreate = () => {
+    if (!isLogin) {
+      alert("로그인 후 이용 가능합니다.");
+      nav("/login");
+    } else {
+      nav("/memorialNew");
+    }
+  };
+
+  const onClickEnter = () => {
+    nav(`/memorialDetail/${myMemorialId}`);
+  };
+
   return (
     <>
       <SectionWrapper>
@@ -27,11 +55,9 @@ const MyMemorialSection = () => {
           </SubText>
           <ButtonWrapper>
             <Button
-              text={"추모공간 생성하기"}
+              text={isCreated ? "추모공간 입장하기" : "추모공간 생성하기"}
               color={SelectFuneral}
-              onClick={() => {
-                nav("/memorialNew");
-              }}
+              onClick={isCreated ? onClickEnter : onClickCreate}
             ></Button>
           </ButtonWrapper>
         </TextWrapper>
@@ -56,17 +82,18 @@ const SectionWrapper = styled.div`
   background-color: #f6f5f4;
 `;
 
- const TextWrapper = styled.div`
+const TextWrapper = styled.div`
   padding: 88px;
 
   display: flex;
   flex-direction: column;
-  gap: 27px;
+  gap: 15px;
   line-height: normal;
   width: 70vw;
 `;
 
 const ImageWrapper = styled.div`
+  margin-top: 20px;
   width: 80%;
   img {
     width: 100%;
@@ -74,6 +101,7 @@ const ImageWrapper = styled.div`
 `;
 
 const ButtonWrapper = styled.div`
+  margin-top: 15px;
   button {
     font-size: 18px;
   }

@@ -26,7 +26,7 @@ const IndexText = styled.div`
   line-height: 140%; /* 35px */
   letter-spacing: -0.5px;
   color: ${SelectFuneral};
-  margin-bottom: 16px;
+  margin-bottom: 5px;
 `;
 
 const MainText = styled.div`

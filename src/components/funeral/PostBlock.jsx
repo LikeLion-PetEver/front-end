@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Text, SecondaryText } from "../../styles/color";
+import { Text, SecondaryText } from "../styles/color";
 
 const PostBlock = ({ img, textMain, textSub, onClick }) => {
   return (
@@ -8,7 +8,7 @@ const PostBlock = ({ img, textMain, textSub, onClick }) => {
       <PostImg src={img}></PostImg>
       <PostTextArea>
         <PostTextMain>
-          {textMain?.length <= 26 ? textMain : textMain?.slice(0, 26) + "..."}
+          {textMain?.length <= 11 ? textMain : textMain?.slice(0, 11) + "..."}
         </PostTextMain>
         {/* 12자 이상일 경우 ...표시와 함께 뒷부분 생략 */}
         <PostTextSub>{textSub}</PostTextSub>
@@ -42,19 +42,18 @@ const PostTextArea = styled.div`
   position: absolute;
   width: 100%;
   height: 40%;
-  top: 58%;
-  padding: 20px 20px;
+  top: 60%;
+  padding: 30px 20px;
 `;
 
 const PostTextMain = styled.h3`
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 700;
-  line-height: 120%;
   color: ${Text};
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 `;
 const PostTextSub = styled.h5`
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 400;
   color: ${SecondaryText};
 `;

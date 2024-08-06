@@ -1,0 +1,40 @@
+.LocationButton {
+  display: flex;
+  gap: 10px;
+  padding: 0px 60px;
+  margin-left: 6%;
+}
+
+.LocationButton button {
+  cursor: pointer;
+  width: 110px;
+  height: 40px;
+  flex-shrink: 0;
+
+  border-radius: 10px;
+  border: 1px solid var(--unselect, #c5c5c5);
+  background: #fff;
+
+  color: var(--unselect, #c5c5c5);
+  font-family: "LINE Seed Sans KR";
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 560;
+  line-height: normal;
+  letter-spacing: -0.5px;
+}
+
+.LocationButton button:hover {
+  color: #f26c51;
+  border: 1px solid #f26c51;
+}
+
+.postblock {
+  padding: 60px 100px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 50px 7%;
+  padding-left: 60px;
+  margin-left: 6%;
+}

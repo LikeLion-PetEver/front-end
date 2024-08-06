@@ -31,7 +31,8 @@ const SideBar = () => {
             <IconWrapper
               width={isExtended ? "210px" : "50px"}
               onClick={() => {
-                nav("/landingPage");
+                isExtended && SetIsExtended(!isExtended);
+                nav("/");
               }}
               className={
                 location.pathname.includes("landing") ? "currentPage" : ""
@@ -45,7 +46,8 @@ const SideBar = () => {
             <IconWrapper
               width={isExtended ? "210px" : "50px"}
               onClick={() => {
-                nav("/diaryQuestion");
+                isExtended && SetIsExtended(!isExtended);
+                nav("/");
               }}
               className={
                 location.pathname.includes("diary") ? "currentPage" : ""
@@ -59,6 +61,7 @@ const SideBar = () => {
             <IconWrapper
               width={isExtended ? "210px" : "50px"}
               onClick={() => {
+                isExtended && SetIsExtended(!isExtended);
                 nav("/memorialMain");
               }}
               className={
@@ -73,8 +76,12 @@ const SideBar = () => {
             <IconWrapper
               width={isExtended ? "210px" : "50px"}
               onClick={() => {
-                nav("/");
+                isExtended && SetIsExtended(!isExtended);
+                nav("/funeralLocation");
               }}
+              className={
+                location.pathname.includes("funeral") ? "currentPage" : ""
+              }
             >
               <IconImg src={iconFuneral}></IconImg>
               <div className={isExtended ? "showText" : "hideText"}>
@@ -84,7 +91,8 @@ const SideBar = () => {
             <IconWrapper
               width={isExtended ? "210px" : "50px"}
               onClick={() => {
-                nav("/myPage");
+                isExtended && SetIsExtended(!isExtended);
+                nav("/");
               }}
               className={location.pathname.includes("my") ? "currentPage" : ""}
             >

@@ -3,7 +3,7 @@ import InputTextSection from "./InputTextSection";
 import styled from "styled-components";
 import { Text, Unselect } from "../../styles/color";
 
-const InputSectionFirst = () => {
+const InputSectionFirst = ({ inputRef, onChangeData }) => {
   return (
     <SectionWrapper>
       <InputTextSection
@@ -13,16 +13,34 @@ const InputSectionFirst = () => {
       ></InputTextSection>
       <div>
         <InputText>반려동물 이름</InputText>
-        <InputBox placeholder="반려동물의 이름을 입력해주세요"></InputBox>
+        <InputBox
+          id={"pet_name"}
+          onChange={onChangeData}
+          placeholder="반려동물의 이름을 입력해주세요"
+          ref={(ref) => (inputRef.current[0] = ref)}
+          required
+        ></InputBox>
       </div>
       <DateSectionWrapper>
         <DateWrapper>
           <InputText>반려동물 탄생일</InputText>
-          <InputBox data-placeholder="YYYY/MM/DD" type="date"></InputBox>
+          <InputBox
+            id={"birth_date"}
+            onChange={onChangeData}
+            type="date"
+            ref={(ref) => (inputRef.current[1] = ref)}
+            required
+          ></InputBox>
         </DateWrapper>
         <DateWrapper>
           <InputText>무지개 다리를 건넌 날</InputText>
-          <InputBox placeholder="YYYY/MM/DD" type="date"></InputBox>
+          <InputBox
+            id={"death_date"}
+            onChange={onChangeData}
+            placeholder="YYYY/MM/DD"
+            type="date"
+            ref={(ref) => (inputRef.current[2] = ref)}
+          ></InputBox>
         </DateWrapper>
       </DateSectionWrapper>
     </SectionWrapper>
@@ -44,7 +62,7 @@ export const InputText = styled.div`
   line-height: 140%; /* 25.2px */
   letter-spacing: -0.36px;
   color: ${Text};
-  margin-bottom: 15px;
+  margin-bottom: 7px;
 `;
 
 export const InputBox = styled.input`
@@ -63,6 +81,10 @@ export const InputBox = styled.input`
   color: ${Text};
   &::placeholder {
     color: ${Unselect};
+  }
+
+  &[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0.3;
   }
 `;
 

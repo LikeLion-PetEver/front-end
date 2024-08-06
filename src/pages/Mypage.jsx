@@ -53,6 +53,7 @@ const Mypage = () => {
 
         if (response.status === 200) {
           let data = response.data;
+          console.log(data);  
           // 엔드포인트에 따른 데이터 가공
           if (tab === "all") {
             data = data.map((post) => ({
